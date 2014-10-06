@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app='truth'>
+	<head>
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+		<title>Truth or Truth</title>
+		<link rel="stylesheet" type="text/css" href="app/styles/normalize.css">
+		<link rel="stylesheet" type="text/css" href="app/styles/style.css">
+		<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="main-container" ng-controller="mainCtrl">
+			<div class="top-bar">
+				{{test}}
+				<div class="head">Truth or Truth
+				</div>
+				<div class="options">
+					<a href="index.html">Leave Game</a>
+				</div>
+			</div>
+		</div>
+		<ng-view></ng-view>
+		<!-- Angular stuff -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
+		<!-- Firebase -->
+		<script src="https://cdn.firebase.com/js/client/1.0.15/firebase.js"></script>
+		<!-- App scripts -->
+		<script src="app/app.js"></script>
+		<script src="app/mainCtrl.js"></script> 
+	</body>
+</html>
