@@ -1,8 +1,8 @@
-var app = angular.module('truth', ['ngRoute']);
+var app = angular.module('truth', ['ngRoute', 'firebase']);
 
-app.config(['$routeProvider', function($routeProvider){
+app.config(['$routeProvider', function($routeProvider, $httpProvider){
 
-// $httpProvider.interceptors.push('httpRequestInterceptor');
+$httpProvider.interceptors.push('httpRequestInterceptor');
 
 $routeProvider
 	.when('/home', {
