@@ -6,4 +6,5 @@ app.service('environmentService', function($window) {
 			return $window.env;
 		}
 	}
+	
 });

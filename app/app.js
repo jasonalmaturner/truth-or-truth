@@ -1,29 +1,32 @@
-var app = angular.module('truth', ['ngRoute', 'firebase']);
+var app = angular.module('truth', ['ngRoute'/*, 'firebase'*/]);
 
-app.config(['$routeProvider', function($routeProvider, $httpProvider){
+app.config(['$routeProvider', function($routeProvider/*, $httpProvider*/){
 
-$httpProvider.interceptors.push('httpRequestInterceptor');
+// $httpProvider.interceptors.push('httpRequestInterceptor');
 
 $routeProvider
-	.when('/home', {
-		templateURL: 'app/js/home/home.html',
-		controller: 'app/js/home/homeCtrl.js'
+	.when('/', {
+		templateUrl: 'app/js/home/home.html',
+		controller: 'homeCtrl'
 	})
 	.when('/create', {
-		templateURL: 'app/js/create/create.html',
-		controller: 'app/js/create/createCtrl.js'
+		templateUrl: 'app/js/create/create.html',
+		controller: 'createCtrl'
 	})
 	.when('/join', {
-		templateURL: 'app/js/join/join.html',
-		controller: 'ap/js/join/joinCtrl.js'
+		templateUrl: 'app/js/join/join.html',
+		controller: 'joinCtrl'
 	})
 	.when('/hat:gameID', {
-		templateURL: 'app/js/hat/hat.html',
-		controller: 'app/js/hat/hatCtrl.js'
+		templateUrl: 'app/js/hat/hat.html',
+		controller: 'hatCtrl'
 	})
 	.when('/player:gameID', {
-		templateURL: 'app/js/player/player.html',
-		controller: 'app/js/player/payerCtrl.js'
+		templateUrl: 'app/js/player/player.html',
+		controller: 'playerCtrl'
 	})
+	.otherwise({
+		redirectTo: '/'
+	});
 
 }]);
