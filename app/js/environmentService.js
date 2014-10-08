@@ -1,8 +1,8 @@
 var app = angular.module('truth');
 
 app.service('environmentService', function($window) {
-	return {
-		getEnv: function() {
+	
+	this.getEnv = function() {
 			return $window.env;
 		}
 	}
