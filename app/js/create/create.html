@@ -9,11 +9,34 @@
 				</p>
 			</div>
 			<div class="form-group">
-				<label>Password</label>
-				<input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Enter password" ng-model="group.password" required>
+				<label>Group Password</label>
+				<input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Enter group password" ng-model="group.password" required ng-minlength=5 ng-maxlength=15>
 				<p class="error" ng-if="createForm.inputPassword.$error.required && createForm.inputPassword.$dirty">
-					Password is required
+					Password is required.
 				</p>
+				<p class="help-block" ng-if="createForm.inputPassword.$invalid && createForm.inputPassword.$dirty">
+					Password must be between five and fifteen characters long.
+				</p>
+			</div>
+			<div class="form-group">
+				<!-- <label>Confirm Password</label> -->
+				<input type="password" class="form-control" id="inputPassword" placeholder="Confirm group password" ng-model="group.confirm" required ng-minlength=5 ng-maxlength=15>
+			</div>
+				<button type="submit" class="btn btn-default" ng-disabled="loginForm.$invalid">Submit</button>
+			</div>
+				<label>Group Password</label>
+				<input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Enter group password" ng-model="group.password" required ng-minlength=5 ng-maxlength=15>
+				<p class="error" ng-if="createForm.inputPassword.$error.required && createForm.inputPassword.$dirty">
+					Password is required.
+				</p>
+				<p class="help-block" ng-if="createForm.inputPassword.$invalid && createForm.inputPassword.$dirty">
+					Password must be between five and fifteen characters long.
+				</p>
+			</div>
+			<div class="form-group">
+				<!-- <label>Confirm Password</label> -->
+				<input type="password" class="form-control" id="inputPassword" placeholder="Confirm group password" ng-model="group.confirm" required ng-minlength=5 ng-maxlength=15>
+			</div>
 				<button type="submit" class="btn btn-default" ng-disabled="loginForm.$invalid">Submit</button>
 			</div>
 		</form>
