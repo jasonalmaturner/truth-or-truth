@@ -15,7 +15,7 @@ $routeProvider
 	})
 	.when('/create', {
 		templateUrl: 'app/js/create/create.html',
-		controller: 'homeCtrl'
+		controller: 'createCtrl'
 	})
 /*	.when('/join', {
 		templateUrl: 'app/js/join/join.html',
@@ -27,7 +27,15 @@ $routeProvider
 	})
 	.when('/player:gameID', {
 		templateUrl: 'app/js/player/player.html',
-		controller: 'playerCtrl'
+		controller: 'playerCtrl',
+		resolve: {
+			userReference: function(firebaseService, $route){
+				return firebaseService.getUser($route.current.params.userId);
+			},
+			thingsReference: function(firebaseService, $route){
+				return firebaseService.getThings($route.current.params.userId);
+			}
+		}
 	})
 	.otherwise({
 		redirectTo: '/'

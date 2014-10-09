@@ -1,6 +1,6 @@
 var app = angular.module('truth');
 
-app.service('authService', function(){
+app.service('authService', function($firebase){
 	var firebaseUrl = 'https://truth-or-truth.firebaseio.com';
 	var firebaseLogin = new Firebase(firebaseUrl);
 
@@ -23,6 +23,7 @@ app.service('authService', function(){
 	}
 
 	this.register = function(user, cb){
+		debugger;
 		firebaseLogin.createUser({
 			email: user.email,
 			password: user.password
@@ -34,9 +35,10 @@ app.service('authService', function(){
 					password: user.password
 				}, function(err, authData) {
 					if (authData) {
-						authData.name = user.name;
-						authData.timestapm = new Date().toISOString();
-						firebaseLogin.chile('users').child(authData.uid.replace('simplelogin:', '')).set(authData);
+						authData.firstName = user.firstName;
+						authData.lastName = user.lastName;
+						authData.timestamp = new Date().toISOString();
+						firebaseLogin.child('users').child(authData.uid.replace('simplelogin:', '')).set(authData);
 						cb(authData);
 					} else {
 						console.log('something went wrong');

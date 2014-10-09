@@ -1,11 +1,17 @@
+<!-- <div class="join-create-menu">
+	<ul>
+		<li><a href="#/join"> Join Game </a></li>
+		<li><a href="#/create"> Create Game </a></li>
+	</ul>
+</div> -->
 <div class='create-join-menu'>
 	<ul>
-		<li ng-click="createToggle()"> Create Game </li>
 		<li ng-click="joinToggle()"> Join Game </li>
+		<li ng-click="createToggle()"> Create Game </li>
 	</ul>
 </div>
-<div class="forms-container">
-	<div class="create-form" ng-controller="createCtrl" ng-show="create">
+<div class="forms-container" ng-controller="createCtrl">
+	<div class="create-form" ng-show="create">
 		<form role="form" name="createForm">
 			<div class="form-group">
 				<label> Group Name </label>
@@ -45,7 +51,7 @@
 			</div> -->
 		</form>
 	</div>
-	<div class="join-form" ng-controller="joinCtrl" ng-show="join">
+	<div class="join-form" ng-show="join">
 		<form role="form" name="joinForm">
 			<div class="form-group">
 				<!-- Add filter to show existing groups -->
