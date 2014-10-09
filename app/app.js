@@ -1,6 +1,6 @@
-'use strict';
+// 'use strict';
 
-var app = angular.module('truth', ['ngRoute'/*, 'firebase'*/]);
+var app = angular.module('truth', ['ngRoute', 'firebase']);
 
 app.config(['$routeProvider', function($routeProvider/*, $httpProvider*/){
 
