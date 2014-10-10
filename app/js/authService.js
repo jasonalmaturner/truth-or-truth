@@ -23,7 +23,6 @@ app.service('authService', function($firebase){
 	}
 
 	this.register = function(user, cb){
-		debugger;
 		firebaseLogin.createUser({
 			email: user.email,
 			password: user.password

@@ -1,6 +1,6 @@
 var app = angular.module('truth');
 
-app.controller('createCtrl', function($scope){
+app.controller('createCtrl', function($scope, createService){
 
 	$scope.join = true;
 	$scope.create = false;
@@ -14,6 +14,10 @@ app.controller('createCtrl', function($scope){
 		$scope.join = false;
 		$scope.create = true;
 		console.log('test');
+	}
+
+	$scope.createGroup = function(){
+		createService.createNewGroup($scope.group);
 	}
 
 })

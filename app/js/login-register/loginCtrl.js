@@ -21,7 +21,7 @@ app.controller('loginCtrl', function ($scope, authService, $location) {
 		return authService.login($scope.details, function(user){
 			user.uid = user.uid.replace('simpleLogin:', '');
 			$scope.$apply(function(){
-				$location.path('/player/' + user.uid)
+				$location.path('/create')
 			});
 		});
 	};
@@ -30,7 +30,7 @@ app.controller('loginCtrl', function ($scope, authService, $location) {
 		return authService.register($scope.details, function(user){
 			user.uid = user.uid.replace('simpleLogin:', '');
 			$scope.$apply(function(){
-				$location.path('/player/' + user.uid)
+				$location.path('/create')
 			});
 		});
 	};
