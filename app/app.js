@@ -21,11 +21,11 @@ $routeProvider
 		templateUrl: 'app/js/join/join.html',
 		controller: 'joinCtrl'
 	})*/
-	.when('/hat:gameID', {
+	.when('/hat', {
 		templateUrl: 'app/js/hat/hat.html',
 		controller: 'hatCtrl'
 	})
-	.when('/player:gameID', {
+	.when('/player', {
 		templateUrl: 'app/js/player/player.html',
 		controller: 'playerCtrl',
 		resolve: {

@@ -1,6 +1,6 @@
 var app = angular.module('truth');
 
-app.controller('createCtrl', function($scope, createService){
+app.controller('createCtrl', function($scope, createService, $location, firebaseService){
 
 	$scope.join = true;
 	$scope.create = false;
@@ -18,6 +18,9 @@ app.controller('createCtrl', function($scope, createService){
 
 	$scope.createGroup = function(){
 		createService.createNewGroup($scope.group);
+		$location.path('/player/');
+		var gameId = $scope.group.name;
+		firebaseService.saveGame(gameId);
 	}
-
+	
 })
