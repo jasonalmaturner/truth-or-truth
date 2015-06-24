@@ -8,6 +8,8 @@ app.config(['$routeProvider', function($routeProvider/*, $httpProvider*/){
 
 // Change the /join and /create routes to ng-show to reduce the number of routes.
 
+
+// I made a change
 $routeProvider
 	.when('/', {
 		templateUrl: 'app/js/home/home.html',
